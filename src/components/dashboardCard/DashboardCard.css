@@ -22,6 +22,11 @@
     column-gap: 0.6rem;
 }
 
+.cardLeft img{
+    height: 4rem;
+    width: 4rem;
+}
+
 .cardTitle{
     font-size: 1.2rem;
 }

@@ -147,6 +147,11 @@
   row-gap: 1rem;
 }
 
+.icon-calendar{
+  height: 4.5rem;
+  width: 4.5rem;
+}
+
 .meeting-info {
   display: flex;
   flex-direction: column;
