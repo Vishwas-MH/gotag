@@ -11,6 +11,7 @@
 .Dashboard-card:hover{
     cursor: pointer;
     background-color: rgba(256,256,256, 0.5);
+    box-shadow: 0 4px 4px 0 rgba(19, 20, 20, 0.15);
 }
 
 .cardLeft{
