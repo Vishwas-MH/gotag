@@ -4,12 +4,15 @@ import gotagImage from "../../assets/images/header/gotagimg.png";
 import icon_notification from "../../assets/images/header/icon_notification.png";
 import icon_profile from "../../assets/images/header/icon_profile.png";
 import icon_hamburger from "../../assets/images/header/icon_hamburger.svg";
+import { Link } from "react-router-dom";
 
 const Header = () => {
     return (
         <header className="appHeader">
             <img className="hamburger" src={icon_hamburger} alt=""></img>
+            <Link to="/Dashboard">
             <img className="gotagImage" src={gotagImage} alt=""></img>
+            </Link>
             <div className="headerRight">
                 <img className="bellIcon" src={icon_notification} alt=""></img>
                 <div className="name_profile">

@@ -27,3 +27,17 @@ ul{
   background-color: rgba(0, 88, 250, 0.05);
   color: #0059fb;
 }
+
+.navBar #NavActive a{
+  background-color: rgba(0, 88, 250, 0.05);
+  color: #0059fb;
+}
+
+.navBar li a{
+  text-decoration: none;
+  color: #3d4b5b;
+}
+
+.navBar li:hover a{
+  color: #0059fb;
+}
