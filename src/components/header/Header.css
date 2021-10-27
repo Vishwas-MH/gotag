@@ -1,0 +1,66 @@
+.appHeader {
+  height: 3.5rem;
+  padding: 0 2.7rem 0 4.2rem;
+  box-shadow: 0 2px 2px 0 rgba(172, 181, 189, 0.15);
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 2;
+}
+
+.gotagImage{
+  width: 6.8rem;
+}
+
+.headerRight{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: -webkit-fill-available;
+  column-gap: 1.9rem;
+}
+
+.bellIcon{
+  width: 1.9rem;
+}
+
+.name_profile{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: -webkit-fill-available;
+  column-gap: 0.7rem;
+}
+
+.profileImg{
+  width: 2.5rem;
+}
+
+.profileInfo{
+  text-align: right;
+}
+
+.profileInfo h3{
+  font-size: 1rem;
+  color: #000000;
+  font-weight: 600;
+}
+
+.profileInfo span{
+  font-size: 1rem;
+  color: #a1a1a1;
+  font-weight: 400;
+}
+
+.hamburger{
+  height: 1.5rem;
+  position: fixed;
+  left: 1.5rem;
+}
+
+@media screen and (min-width: 769px){
+  .hamburger{
+    display: none;
+  }
+}

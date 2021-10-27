@@ -1,0 +1,28 @@
+.navBar {
+  width: 19%;
+  height: calc(100% - 3.5rem);
+  box-shadow: 2px 2px 2px 0 rgba(172, 181, 189, 0.15);
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  overflow-y: scroll;
+  z-index: 2;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.navBar li{
+  background-color: #ffffff;
+}
+
+ul{
+  list-style-type: none;
+}
+
+.navBar #NavActive{
+  background-color: rgba(0, 88, 250, 0.05);
+  color: #0059fb;
+}

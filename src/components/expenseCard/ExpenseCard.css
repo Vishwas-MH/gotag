@@ -1,0 +1,88 @@
+.expense-card-left{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    column-gap: 3.5rem;
+    width: 62%;
+}
+
+.emp-img-id{
+    display: flex;
+    column-gap: 0.5rem;
+    align-items: center;
+    width: 40%;
+}
+
+.emp-img{
+    height: 2.5rem;
+    width: 2.5rem;
+}
+
+.emp-id-name{
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.2rem;
+    text-align: left;
+}
+
+.emp-id{
+    color: #0059fb;
+    font-weight: 600;
+}
+
+.emp-name{
+    color: #404b5b;
+    font-weight: 600;
+}
+
+.expense-details{
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.3rem;
+    text-align: left;
+    width: 45%;
+}
+
+.expense-dates{
+    color: #404b5b;
+    font-weight: 400;
+    font-size: 0.9rem;
+}
+
+.expense-comment{
+    color:#404b5b;
+    font-weight: 400;
+    font-size: 0.9rem;
+}
+
+.expense-card-right{
+    display: flex;
+    column-gap: 0.2rem;
+    align-items: center;
+    padding: 0 1rem 0 0;
+}
+
+.reject-button, .approve-button{
+    padding: 0.55rem 1rem;
+    display: flex;
+    align-items: center;
+    column-gap: 0.3rem;
+    background-color: #ffffff;
+    cursor: pointer;
+}
+
+.reject-button:hover{
+    background-color: rgba(255, 0, 0, 0.05);
+}
+
+.approve-button:hover{
+    background-color: rgba(0, 89, 251, 0.05);
+}
+
+.reject-text{
+    color: #eb1d2b;
+}
+
+.approve-text{
+    color: #0059fb;;
+}
