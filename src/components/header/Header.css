@@ -1,12 +1,13 @@
 .appHeader {
   height: 3.5rem;
   padding: 0 2.7rem 0 4.2rem;
-  box-shadow: 0 2px 2px 0 rgba(172, 181, 189, 0.15);
+  box-shadow: 0px 4px 4px 0px rgba(172, 181, 189, 0.1);
   background-color: #fff;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 2;
+  z-index: 10;
+  position: relative;
 }
 
 .gotagImage{
