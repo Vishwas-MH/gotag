@@ -10,7 +10,7 @@ const EmployeeCard = (props) => {
             <td className="table-row-empID">
                 <div className="image-and-id">
                     <img className="id-image" src={icon_employee_profile} alt=""></img>
-                    <span className="emp-id-row">{props.emp_id}</span>
+                    <span className="emp-id-row">#{props.emp_id}</span>
                 </div>
             </td>
             <td className="table-row-name-email">

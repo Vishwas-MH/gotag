@@ -11,20 +11,62 @@ import { Link } from "react-router-dom";
 
 const Employees = () => {
 
-    // const [searchInput, setSearchInput] = useState("");
-    // const newRef = useRef("");
     const [searchTerm, setSearchTerm] = useState("");
+    //let tableData = EmployeeCardList;
 
-    const tableData = EmployeeCardList;
+    const [tableData, setTableData] = useState(EmployeeCardList)
+
+    const [visible, setVisible] = useState(10);
+    const [sortOrder, setSortOrder] = useState("Asc");
+    //console.log(visible);
+    //console.log(tableData.length);
+
+    const showMoreItems = () => {
+        setVisible((prevValue) => prevValue + 10);
+    }
+
+    const tableSort = (field) => {
+        if (sortOrder === "Asc") {
+            const sortedData = [...tableData].sort((a, b) =>
+                a[field].toLowerCase() > b[field].toLowerCase() ? 1 : -1
+            );
+            setTableData(sortedData);
+            setSortOrder("Desc");
+        }
+        if (sortOrder === "Desc") {
+            const sortedData = [...tableData].sort((a, b) =>
+                a[field].toLowerCase() < b[field].toLowerCase() ? 1 : -1
+            );
+            setTableData(sortedData);
+            setSortOrder("Asc");
+        }
+    }
+
+    const tableSort2 = (field) => {
+        if (sortOrder === "Asc") {
+            const sortedData = [...tableData].sort((a, b) =>
+                a[field] - b[field]
+            );
+            setTableData(sortedData);
+            setSortOrder("Desc");
+        }
+        if (sortOrder === "Desc") {
+            const sortedData = [...tableData].sort((a, b) =>
+                b[field] - a[field]
+            );
+            setTableData(sortedData);
+            setSortOrder("Asc");
+        }
+    }
 
     return (
         <section className="employees-page">
             <div className="employees-breadcrumbs">
                 <Link to="/EmployeesCrumbs">
-                <span className="main-crumb">Employees&nbsp;</span>
+                    <span className="main-crumb">Employees&nbsp;</span>
                 </Link>
                 <Link to="/EmployeesCrumbs/Employees">
-                <span className="sub-crumb"> / All Employees</span>
+                    <span className="sub-crumb"> / All Employees</span>
                 </Link>
             </div>
             <div className="employees-content">
@@ -42,24 +84,81 @@ const Employees = () => {
                     </div>
                 </header>
                 <div className="employee-table-container">
+                    <table className="employee-table">
+                        <thead className="employee-table-header">
+                            <tr className="table-header-row">
+                                <th className="table-header-empID" onClick={() => tableSort2("emp_id")}>
+                                    <div className="th-elements">
+                                        <span className="header-name">EMP. ID</span>
+                                        <div className="sort-buttons">
+                                            <img className="sort-icon" src={icon_arrow_up} alt="" ></img>
+                                            <img className="sort-icon" src={icon_arrow_down} alt="" ></img>
+                                        </div>
+                                    </div>
+                                </th>
+                                <th className="table-header-name-email" onClick={() => tableSort("emp_name")}>
+                                    <div className="th-elements">
+                                        <span className="header-name">NAME / EMAIL</span>
+                                        <div className="sort-buttons">
+                                            <img className="sort-icon" src={icon_arrow_up} alt="" ></img>
+                                            <img className="sort-icon" src={icon_arrow_down} alt="" ></img>
+                                        </div>
+                                    </div>
+                                </th>
+                                <th className="table-header-role" onClick={() => tableSort("emp_role")}>
+                                    <div className="th-elements">
+                                        <span className="header-name">ROLE</span>
+                                        <div className="sort-buttons">
+                                            <img className="sort-icon" src={icon_arrow_up} alt="" ></img>
+                                            <img className="sort-icon" src={icon_arrow_down} alt="" ></img>
+                                        </div>
+                                    </div>
+                                </th>
+                                <th className="table-header-mobile" onClick={() => tableSort2("emp_mob")}>
+                                    <div className="th-elements">
+                                        <span className="header-name">MOBILE</span>
+                                        <div className="sort-buttons">
+                                            <img className="sort-icon" src={icon_arrow_up} alt="" ></img>
+                                            <img className="sort-icon" src={icon_arrow_down} alt="" ></img>
+                                        </div>
+                                    </div>
+                                </th>
+                                <th className="table-header-join-date" onClick={() => tableSort("emp_date")}>
+                                    <div className="th-elements">
+                                        <span className="header-name">JOIN DATE</span>
+                                        <div className="sort-buttons">
+                                            <img className="sort-icon" src={icon_arrow_up} alt="" ></img>
+                                            <img className="sort-icon" src={icon_arrow_down} alt="" ></img>
+                                        </div>
+                                    </div>
+                                </th>
+                                <th className="table-header-manager">
+                                    <div className="th-elements">
+                                        <span className="header-name">MANAGER</span>
+                                        <div className="sort-buttons">
+                                            <img className="sort-icon" src={icon_arrow_up} alt="" ></img>
+                                            <img className="sort-icon" src={icon_arrow_down} alt="" ></img>
+                                        </div>
+                                    </div>
+                                </th>
+                                <th className="table-header-actions">
+                                    <div className="th-elements">
+                                        <span className="header-name">ACTIONS</span>
+                                    </div>
+                                </th>
+                            </tr>
+                        </thead>
+                    </table>
                     <TableScrollbar>
                         <table className="employee-table">
-                            <thead className="employee-table-header">
+                            {/* <thead className="employee-table-header">
                                 <tr className="table-header-row">
                                     <th className="table-header-empID">
                                         <div className="th-elements">
                                             <span className="header-name">EMP. ID</span>
                                             <div className="sort-buttons">
-                                                <img
-                                                    className="sort-icon"
-                                                    src={icon_arrow_up}
-                                                    alt=""
-                                                ></img>
-                                                <img
-                                                    className="sort-icon"
-                                                    src={icon_arrow_down}
-                                                    alt=""
-                                                ></img>
+                                                <img className="sort-icon" src={icon_arrow_up} alt="" ></img>
+                                                <img className="sort-icon" src={icon_arrow_down} alt="" ></img>
                                             </div>
                                         </div>
                                     </th>
@@ -67,16 +166,8 @@ const Employees = () => {
                                         <div className="th-elements">
                                             <span className="header-name">NAME / EMAIL</span>
                                             <div className="sort-buttons">
-                                                <img
-                                                    className="sort-icon"
-                                                    src={icon_arrow_up}
-                                                    alt=""
-                                                ></img>
-                                                <img
-                                                    className="sort-icon"
-                                                    src={icon_arrow_down}
-                                                    alt=""
-                                                ></img>
+                                                <img className="sort-icon" src={icon_arrow_up} alt="" ></img>
+                                                <img className="sort-icon" src={icon_arrow_down} alt="" ></img>
                                             </div>
                                         </div>
                                     </th>
@@ -84,33 +175,17 @@ const Employees = () => {
                                         <div className="th-elements">
                                             <span className="header-name">ROLE</span>
                                             <div className="sort-buttons">
-                                                <img
-                                                    className="sort-icon"
-                                                    src={icon_arrow_up}
-                                                    alt=""
-                                                ></img>
-                                                <img
-                                                    className="sort-icon"
-                                                    src={icon_arrow_down}
-                                                    alt=""
-                                                ></img>
+                                                <img className="sort-icon" src={icon_arrow_up} alt="" ></img>
+                                                <img className="sort-icon" src={icon_arrow_down} alt="" ></img>
                                             </div>
                                         </div>
                                     </th>
                                     <th className="table-header-mobile">
                                         <div className="th-elements">
                                             <span className="header-name">MOBILE</span>
-                                            <div className="sort-buttons">
-                                                <img
-                                                    className="sort-icon"
-                                                    src={icon_arrow_up}
-                                                    alt=""
-                                                ></img>
-                                                <img
-                                                    className="sort-icon"
-                                                    src={icon_arrow_down}
-                                                    alt=""
-                                                ></img>
+                                           <div className="sort-buttons">
+                                                <img className="sort-icon" src={icon_arrow_up} alt="" ></img>
+                                                <img className="sort-icon" src={icon_arrow_down} alt="" ></img>
                                             </div>
                                         </div>
                                     </th>
@@ -118,16 +193,8 @@ const Employees = () => {
                                         <div className="th-elements">
                                             <span className="header-name">JOIN DATE</span>
                                             <div className="sort-buttons">
-                                                <img
-                                                    className="sort-icon"
-                                                    src={icon_arrow_up}
-                                                    alt=""
-                                                ></img>
-                                                <img
-                                                    className="sort-icon"
-                                                    src={icon_arrow_down}
-                                                    alt=""
-                                                ></img>
+                                                <img className="sort-icon" src={icon_arrow_up} alt="" ></img>
+                                                <img className="sort-icon" src={icon_arrow_down} alt="" ></img>
                                             </div>
                                         </div>
                                     </th>
@@ -135,16 +202,8 @@ const Employees = () => {
                                         <div className="th-elements">
                                             <span className="header-name">MANAGER</span>
                                             <div className="sort-buttons">
-                                                <img
-                                                    className="sort-icon"
-                                                    src={icon_arrow_up}
-                                                    alt=""
-                                                ></img>
-                                                <img
-                                                    className="sort-icon"
-                                                    src={icon_arrow_down}
-                                                    alt=""
-                                                ></img>
+                                                <img className="sort-icon" src={icon_arrow_up} alt="" ></img>
+                                                <img className="sort-icon" src={icon_arrow_down} alt="" ></img>
                                             </div>
                                         </div>
                                     </th>
@@ -154,38 +213,44 @@ const Employees = () => {
                                         </div>
                                     </th>
                                 </tr>
-                            </thead>
+                            </thead> */}
                             <tbody className="table-body">
                                 {tableData.filter((val) => {
-                                    if(searchTerm === "") {
+                                    if (searchTerm === "") {
                                         return val
                                     }
-                                    else if(val.emp_name.toLowerCase().includes(searchTerm.toLowerCase())
-                                    || val.emp_id.toLowerCase().includes(searchTerm.toLowerCase()) 
-                                    || val.emp_mail.toLowerCase().includes(searchTerm.toLowerCase())
-                                    || val.emp_role.toLowerCase().includes(searchTerm.toLowerCase())){
+                                    else if (val.emp_name.toLowerCase().includes(searchTerm.toLowerCase())
+                                        || val.emp_id.toLowerCase().includes(searchTerm.toLowerCase())
+                                        || val.emp_mail.toLowerCase().includes(searchTerm.toLowerCase())
+                                        || val.emp_role.toLowerCase().includes(searchTerm.toLowerCase())) {
                                         return val
                                     }
                                     return null;
-                                }).map((emps) => {
+                                }).slice(0, visible).map((emps) => {
                                     return (
-                                    <tr className="employee-body-row" key={emps.id}>
-                                        <EmployeeCard
-                                            pfp={emps.pfp}
-                                            emp_name={emps.emp_name}
-                                            emp_id={emps.emp_id}
-                                            emp_mail={emps.emp_mail}
-                                            emp_role={emps.emp_role}
-                                            emp_mob={emps.emp_mob}
-                                            emp_date={emps.emp_date}
-                                        />
-                                    </tr>
-                                )})}
+                                        <tr className="employee-body-row" key={emps.id}>
+                                            <EmployeeCard
+                                                pfp={emps.pfp}
+                                                emp_name={emps.emp_name}
+                                                emp_id={emps.emp_id}
+                                                emp_mail={emps.emp_mail}
+                                                emp_role={emps.emp_role}
+                                                emp_mob={emps.emp_mob}
+                                                emp_date={emps.emp_date}
+                                            />
+                                        </tr>
+                                    )
+                                })}
                             </tbody>
                         </table>
-                        <div className="table-bottom">
-                            <span className="show-more">Show more</span>
-                        </div>
+                        {visible < tableData.length && (
+                            <div className="table-bottom" onClick={showMoreItems}>
+                                <button className="paginate-button">
+                                    <span className="show-more">Show more</span>
+                                </button>
+                            </div>
+                        )
+                        }
                     </TableScrollbar>
                 </div>
             </div>

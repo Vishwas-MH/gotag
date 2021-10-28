@@ -105,6 +105,11 @@
 .table-header-row{
     background-color: #ffffff;
     height: 3.2rem;
+    position: sticky;
+}
+
+.TableScrollbar{
+    height: calc(100% - 4rem)!important;
 }
 
 .table-header-row th{
@@ -126,22 +131,27 @@
 
 .table-header-empID{
     width: 12.5%;
+    cursor: pointer;
 }
 
 .table-header-name-email{
     width: 21%;
+    cursor: pointer;
 }
 
 .table-header-role{
     width: 18%;
+    cursor: pointer;
 }
 
 .table-header-mobile{
     width: 12%;
+    cursor: pointer;
 }
 
 .table-header-join-date{
     width: 11%;
+    cursor: pointer;
 }
 
 .table-header-manager{
@@ -166,6 +176,24 @@
     height: 4.4rem;
     vertical-align: middle;
     background-color: #ffffff;
+}
+
+.table-bottom{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.paginate-button{
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 2rem;
+    background-color: #f3f4f8;
+}
+
+.paginate-button:hover{
+    cursor: pointer;
+    background-color: #f3fff8;
 }
 
 .show-more{
@@ -204,4 +232,5 @@
 
 .table-fixed-head{
     background-color: #f3f4f8;
+    display: none;
 }
