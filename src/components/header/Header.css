@@ -10,8 +10,16 @@
   position: relative;
 }
 
+.appHeader a{
+  height: 100%;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
 .gotagImage{
   width: 6.8rem;
+  height: 2rem;
 }
 
 .headerRight{
