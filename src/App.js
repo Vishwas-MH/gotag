@@ -20,14 +20,15 @@ import EmployeesCrumb from './pages/employees/EmployeesCrumb';
 
 const App = () => {
 
+  const [open, setOpen] = useState(false);
   const [selected, setSelected] = useState(1);
   //console.log(selected);
   return (
     <Router>
       <div className="App">
-        <Header selected={selected} setSelected={setSelected}/>
+        <Header selected={selected} setSelected={setSelected} open={open} setOpen={setOpen}/>
         <main>
-          <Navbar selected={selected} setSelected={setSelected}/>
+          <Navbar selected={selected} setSelected={setSelected} open={open} setOpen={setOpen}/>
           <Switch>
             <Route exact path = "/">
               <Redirect to="/Dashboard"/>

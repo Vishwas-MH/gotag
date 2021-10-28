@@ -1,4 +1,6 @@
 .mainContent {
+  position: fixed;
+  right: 0%;
   width: 81%;
   height: calc(100% - 3.5rem);
   background-color: #f3f4f8;
@@ -49,6 +51,10 @@
   row-gap: 1.8rem;
 }
 
+.Dashboard-items-left ::-webkit-scrollbar{
+  width: 4px ;
+}
+
 .expense-header,
 .events-header {
   display: flex;
@@ -85,7 +91,7 @@
 
 .expenses-container{
     height: calc(100% - 1.8rem);
-    overflow-y: scroll;
+    overflow-y: overlay;
 }
 
 .expense-card{
@@ -114,6 +120,7 @@
   display: flex;
   flex-direction: column;
   row-gap: 1rem;
+  overflow-y: overlay;
 }
 
 .events-header {
@@ -219,7 +226,7 @@
 
 .holidays-container {
   height: 86%;
-  overflow-y: scroll;
+  overflow-y: overlay;
 }
 
 .holiday-card {
