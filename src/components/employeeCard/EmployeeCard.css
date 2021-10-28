@@ -29,11 +29,11 @@ tr td{
 }
 
 .table-row-name-email{
-    width: 22%;
+    width: 21%;
 }
 
 .table-row-role{
-    width: 17%;
+    width: 18%;
     color: #404b5b;
 }
 
@@ -59,6 +59,12 @@ tr td{
 }
 
 .name-and-email{
+    overflow: hidden ;
+    text-overflow: ellipsis;
+}
+
+.overflow{
+    word-wrap: pre;
     overflow: hidden ;
     text-overflow: ellipsis;
 }

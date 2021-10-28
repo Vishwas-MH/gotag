@@ -19,7 +19,9 @@ const EmployeeCard = (props) => {
                     <span className="emp-email">{props.emp_mail}</span>
                 </div>
             </td>
-            <td className="table-row-role">{props.emp_role}</td>
+            <td className="table-row-role">
+                <span className="overflow">{props.emp_role}</span>
+            </td>
             <td className="table-row-mobile">{props.emp_mob}</td>
             <td className="table-row-join-date">{props.emp_date}</td>
             <td className="table-row-manager">select</td>

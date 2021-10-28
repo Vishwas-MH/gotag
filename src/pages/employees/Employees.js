@@ -12,7 +12,7 @@ const Employees = () => {
 
     // const [searchInput, setSearchInput] = useState("");
     // const newRef = useRef("");
-    const [query, setQuery] = useState("");
+    const [searchTerm, setSearchTerm] = useState("");
 
     const tableData = EmployeeCardList;
 
@@ -30,9 +30,9 @@ const Employees = () => {
                         <input
                             className="search-box"
                             type="text"
-                            value={query}
+                            value={searchTerm}
                             placeholder="Search by Employee ID, Name, Email etc"
-                            onChange={(e) => setQuery(e.target.value)}
+                            onChange={(e) => setSearchTerm(e.target.value)}
                         ></input>
                     </div>
                 </header>
@@ -151,7 +151,19 @@ const Employees = () => {
                                 </tr>
                             </thead>
                             <tbody className="table-body">
-                                {tableData.map((emps) => (
+                                {tableData.filter((val) => {
+                                    if(searchTerm === "") {
+                                        return val
+                                    }
+                                    else if(val.emp_name.toLowerCase().includes(searchTerm.toLowerCase())
+                                    || val.emp_id.toLowerCase().includes(searchTerm.toLowerCase()) 
+                                    || val.emp_mail.toLowerCase().includes(searchTerm.toLowerCase())
+                                    || val.emp_role.toLowerCase().includes(searchTerm.toLowerCase())){
+                                        return val
+                                    }
+                                    return null;
+                                }).map((emps) => {
+                                    return (
                                     <tr className="employee-body-row" key={emps.id}>
                                         <EmployeeCard
                                             pfp={emps.pfp}
@@ -163,7 +175,7 @@ const Employees = () => {
                                             emp_date={emps.emp_date}
                                         />
                                     </tr>
-                                ))}
+                                )})}
                             </tbody>
                         </table>
                         <div className="table-bottom">
