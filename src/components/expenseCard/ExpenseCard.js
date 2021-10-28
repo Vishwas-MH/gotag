@@ -10,8 +10,8 @@ const ExpenseCard = (props) => {
                 <div className="emp-img-id">
                     <img className="emp-img" src={props.icon} alt=""></img>
                     <div className="emp-id-name">
-                        <span className="emp-id">{props.emp}</span>
-                        <span className="emp-name">{props.name}</span>
+                        <span className="dash-emp-id">{props.emp}</span>
+                        <span className="dash-emp-name">{props.name}</span>
                     </div>
                 </div>
                 <div className="expense-details">
