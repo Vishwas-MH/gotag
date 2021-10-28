@@ -33,9 +33,9 @@
 }
 
 .employees-content{
-    height: calc(100% - 3rem);
+    height: calc(100% - 7.2rem);
     width: 100%;
-    padding: 1rem 2.3rem 2.5rem 2.3rem;
+    padding: 1rem 2.3rem 1.2rem 2.3rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -58,14 +58,14 @@
     column-gap: 0.3rem;
     align-items: center;
     background-color: #ffffff;
-    height: 3rem;
+    height: 2.5rem;
     padding: 0rem 0.8rem;
-    width: 32%;
+    width: 20rem;
 }
 
 .search-icon{
-    height: 1.2rem;
-    width: 1.2rem;
+    height: 1.1rem;
+    width: 1.1rem;
 }
 
 .search-box{
@@ -83,11 +83,94 @@
 }
 
 .employee-table-container{
-    height: calc(100% - 4.5rem);
+    height: calc(100% - 3.8rem);
     width: 100%;
 }
 
-/* .employees-footer{
+.employee-table{
+    width: 100%;
+    /* background-color: #ffffff; */
+    border-collapse: separate;
+    border-spacing: 0 0.3rem!important;
+}
+
+.employee-table-header{
+    background-color: #ffffff;
+}
+
+.table-header-row{
+    background-color: #ffffff;
+    height: 3.2rem;
+}
+
+.table-header-row th{
+    padding: 0rem 1rem;
+    vertical-align: middle;
+}
+
+.th-elements{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    column-gap: 0.3rem;
+}
+
+.header-name{
+    font-size: 0.85rem;
+    color: #3d4b5b;
+}
+
+.table-header-empID{
+    width: 12.5%;
+}
+
+.table-header-name-email{
+    width: 22%;
+}
+
+.table-header-role{
+    width: 17%;
+}
+
+.table-header-mobile{
+    width: 12%;
+}
+
+.table-header-join-date{
+    width: 11%;
+}
+
+.table-header-manager{
+    width: 16%;
+}
+
+.table-header-actions{
+    width: 9.5%;
+}
+
+.sort-buttons{
+    display: flex;
+    flex-direction: column;
+}
+
+.sort-icon{
+    height: 0.4rem;
+    width: 0.4rem;
+}
+
+.employee-body-row{
+    height: 4.4rem;
+    vertical-align: middle;
+    background-color: #ffffff;
+}
+
+.show-more{
+    text-align: center;
+    font-size: 0.9rem;
+    color: #0058fa;
+}
+
+.employees-footer{
     height: 4.8rem;
     background-color: #ffffff;
     width: 100%;
@@ -113,4 +196,8 @@
 
 .saveBtn{
     background-color: #0058fa;
-} */
+}
+
+.table-fixed-head{
+    background-color: #ffffff;
+}

@@ -59,7 +59,8 @@ const NavCardList = [
     id: 7,
     icon: icon_announcements,
     cardText: "Announcements",
-    cardText2: "New!",
+    // cardText2: "New!",
+    cardText2: "",
     path: "/Announcements",
   },
   {
