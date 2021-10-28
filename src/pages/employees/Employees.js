@@ -7,6 +7,7 @@ import icon_arrow_down from "../../assets/images/employees/icon_arrow_down.png";
 import EmployeeCardList from "../../components/employeeCard/EmployeeCardList";
 import EmployeeCard from "../../components/employeeCard/EmployeeCard";
 import TableScrollbar from 'react-table-scrollbar';
+import { Link } from "react-router-dom";
 
 const Employees = () => {
 
@@ -19,8 +20,12 @@ const Employees = () => {
     return (
         <section className="employees-page">
             <div className="employees-breadcrumbs">
+                <Link to="/EmployeesCrumbs">
                 <span className="main-crumb">Employees&nbsp;</span>
+                </Link>
+                <Link to="Employees">
                 <span className="sub-crumb"> / All Employees</span>
+                </Link>
             </div>
             <div className="employees-content">
                 <header className="employees-content-header">

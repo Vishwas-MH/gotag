@@ -32,7 +32,7 @@ const NavCardList = [
     icon: icon_employees,
     cardText: "Employees",
     cardText2: "",
-    path: "/Employees",
+    path: "/EmployeesCrumbs",
   },
   {
     id: 4,

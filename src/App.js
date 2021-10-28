@@ -16,6 +16,7 @@ import Organization from './pages/organization/Organization';
 import Policies from './pages/policies/Policies';
 import Polls from './pages/polls/Polls';
 import Support from './pages/support/Support';
+import EmployeesCrumb from './pages/employees/EmployeesCrumb';
 
 const App = () => {
 
@@ -39,6 +40,9 @@ const App = () => {
           <Switch>
             <Route exact path = "/Employees" component={Employees}></Route>
             {/* <Route exact path = "/Employees" component={() => <Employees selected={selected} setSelected={setSelected}/> }></Route> */}
+          </Switch>
+          <Switch>
+            <Route exact path = "/EmployeesCrumbs" component = {EmployeesCrumb}></Route>
           </Switch>
           <Switch>
             <Route exact path = "/Announcements" component={Announcements}></Route>
