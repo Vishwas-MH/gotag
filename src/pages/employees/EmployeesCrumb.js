@@ -10,7 +10,7 @@ const EmployeesCrumb = () =>{
             {/* <span className="sub-crumb"> / All Employees</span> */}
         </div>
         <div className="crumbs-redirect">
-            <Link to="/Employees">
+            <Link to="/EmployeesCrumbs/Employees">
                 Go to All Employees
             </Link>
         </div>

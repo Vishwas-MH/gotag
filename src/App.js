@@ -38,7 +38,7 @@ const App = () => {
             {/* <Route exact path = "/Dashboard" component={() => <Dashboard selected={selected} setSelected={setSelected}/> }></Route> */}
           </Switch>
           <Switch>
-            <Route exact path = "/Employees" component={Employees}></Route>
+            <Route exact path = "/EmployeesCrumbs/Employees" component={Employees}></Route>
             {/* <Route exact path = "/Employees" component={() => <Employees selected={selected} setSelected={setSelected}/> }></Route> */}
           </Switch>
           <Switch>
