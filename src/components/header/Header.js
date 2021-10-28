@@ -6,11 +6,15 @@ import icon_profile from "../../assets/images/header/icon_profile.png";
 import icon_hamburger from "../../assets/images/header/icon_hamburger.svg";
 import { Link } from "react-router-dom";
 
-const Header = () => {
+const Header = (props) => {
+
+    // selected = props.selected;
+    // setSelected = props.setSelected;
+
     return (
         <header className="appHeader">
             <img className="hamburger" src={icon_hamburger} alt=""></img>
-            <Link to="/Dashboard">
+            <Link to="/Dashboard" onClick={() => props.setSelected(1)}>
             <img className="gotagImage" src={gotagImage} alt=""></img>
             </Link>
             <div className="headerRight">

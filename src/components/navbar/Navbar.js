@@ -1,12 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import './Navbar.css';
 import NavCard from "../navCard/NavCard";
 import NavCardList from "../navCard/NavCardList";
 import { Link } from "react-router-dom";
 
-const Navbar = () => {
-
-    const [selected, setSelected] = useState(1);
+const Navbar = (props) => {
 
     //console.log(selected);
 
@@ -14,7 +12,7 @@ const Navbar = () => {
         <ul className="navBar">
             {NavCardList.map((navList) => {
                 return (
-                    <li key={navList.id} onClick={() => setSelected(navList.id)} id={selected === navList.id ? "NavActive" : null}>
+                    <li key={navList.id} onClick={() => props.setSelected(navList.id)} id={props.selected === navList.id ? "NavActive" : null}>
                         <Link to={`${navList.path}`}>
                             <NavCard
                                 icons={navList.icon}

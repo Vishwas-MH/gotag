@@ -1,3 +1,4 @@
+import React, {useState} from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import Header from './components/header/Header';
@@ -17,12 +18,15 @@ import Polls from './pages/polls/Polls';
 import Support from './pages/support/Support';
 
 const App = () => {
+
+  const [selected, setSelected] = useState(1);
+  //console.log(selected);
   return (
     <Router>
       <div className="App">
-        <Header />
+        <Header selected={selected} setSelected={setSelected}/>
         <main>
-          <Navbar />
+          <Navbar selected={selected} setSelected={setSelected}/>
           <Switch>
             <Route exact path = "/">
               <Redirect to="/Dashboard"/>
@@ -30,9 +34,11 @@ const App = () => {
           </Switch>
           <Switch>
             <Route exact path = "/Dashboard" component={Dashboard}></Route>
+            {/* <Route exact path = "/Dashboard" component={() => <Dashboard selected={selected} setSelected={setSelected}/> }></Route> */}
           </Switch>
           <Switch>
             <Route exact path = "/Employees" component={Employees}></Route>
+            {/* <Route exact path = "/Employees" component={() => <Employees selected={selected} setSelected={setSelected}/> }></Route> */}
           </Switch>
           <Switch>
             <Route exact path = "/Announcements" component={Announcements}></Route>

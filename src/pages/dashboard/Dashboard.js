@@ -10,7 +10,7 @@ import HolidayCard from "../../components/holidayCard/HolidayCard";
 import ExpenseList from "../../components/expenseCard/ExpenseList";
 import ExpenseCard from "../../components/expenseCard/ExpenseCard";
 
-const Dashboard = () => {
+const Dashboard = (props) => {
   const [selectCard, setSelectCard] = useState(0);
   const n = 5;
   //console.log(ExpenseList);
