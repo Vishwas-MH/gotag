@@ -10,7 +10,7 @@ const Header = (props) => {
 
     // selected = props.selected;
     // setSelected = props.setSelected;
-    console.log(props.open);
+    //console.log(props.open);
     return (
         <header className="appHeader">
             <img className="hamburger" aria-hidden="true" id="hamburgerBtn" src={icon_hamburger} alt="" open={props.open} onClick={() => props.setOpen(!props.open)}></img>

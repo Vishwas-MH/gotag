@@ -114,6 +114,11 @@
     height: calc(100% - 4rem)!important;
 }
 
+.scroll-div{
+    height: calc(100% - 4rem);
+    overflow-y: scroll;
+}
+
 .table-header-row th{
     padding: 0rem 1rem;
     vertical-align: middle;

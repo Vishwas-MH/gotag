@@ -1,13 +1,15 @@
 import React from "react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import "./Employees.css";
 import icon_search from "../../assets/images/employees/icon_search.png";
 import icon_arrow_up from "../../assets/images/employees/icon_arrow_up.png";
 import icon_arrow_down from "../../assets/images/employees/icon_arrow_down.png";
 import EmployeeCardList from "../../components/employeeCard/EmployeeCardList";
 import EmployeeCard from "../../components/employeeCard/EmployeeCard";
-import TableScrollbar from 'react-table-scrollbar';
-import { Link } from "react-router-dom";
+//import TableScrollbar from 'react-table-scrollbar';
+import ManagerList from "../../components/managerSelect/ManagerList";
+
 
 const Employees = () => {
 
@@ -149,7 +151,8 @@ const Employees = () => {
                             </tr>
                         </thead>
                     </table>
-                    <TableScrollbar>
+                    {/* <TableScrollbar> */}
+                    <div className = "scroll-div">
                         <table className="employee-table">
                             {/* <thead className="employee-table-header">
                                 <tr className="table-header-row">
@@ -237,6 +240,7 @@ const Employees = () => {
                                                 emp_role={emps.emp_role}
                                                 emp_mob={emps.emp_mob}
                                                 emp_date={emps.emp_date}
+                                                options={ManagerList}
                                             />
                                         </tr>
                                     )
@@ -251,7 +255,8 @@ const Employees = () => {
                             </div>
                         )
                         }
-                    </TableScrollbar>
+                        </div>
+                    {/* </TableScrollbar> */}
                 </div>
             </div>
             <div className="employees-footer">

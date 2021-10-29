@@ -1,6 +1,6 @@
 tr td{
     vertical-align: middle;
-    padding: 0rem 1rem;
+    padding: 0rem 0rem 0rem 1.05rem;
     text-align: left;
 }
 
@@ -54,6 +54,9 @@ tr:hover{
 .table-row-manager{
     width: 16%;
     color: #404b5b;
+    /* vertical-align: top;
+    top: 15%;
+    padding-top: 1%; */
 }
 
 .table-row-actions{
@@ -88,4 +91,19 @@ tr:hover{
     width: 1rem;
     position: relative;
     right: 1rem;
+}
+
+.manager-overlay{
+    overflow: overlay;
+    display: contents;
+}
+
+.has-focus{
+    display: block;
+    overflow:overlay;
+}
+
+.select-search__select{
+    display: block;
+    overflow:overlay;
 }

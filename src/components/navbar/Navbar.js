@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 const Navbar = (props) => {
 
     //console.log(selected);
-    console.log(props.open);
+    //console.log(props.open);
     return (
         <div className="navBarContainer" id={props.open ? "side_menu_active" : "side_menu"}>
         <ul className="navBar">
