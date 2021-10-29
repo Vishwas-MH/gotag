@@ -2,7 +2,7 @@ import React from "react";
 
 const Announcements = () => {
     return(
-        <h2>Announcements</h2>
+        <section className="mainContent-2">Announcements</section>
     )
 }
 

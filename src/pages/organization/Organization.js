@@ -2,7 +2,7 @@ import React from "react";
 
 const Organization = () => {
     return(
-        <h2>Organization</h2>
+        <section className="mainContent-2">Organization</section>
     )
 }
 

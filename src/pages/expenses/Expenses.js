@@ -2,7 +2,7 @@ import React from "react";
 
 const Expenses = () => {
     return(
-        <h2>Expenses</h2>
+        <section className="mainContent-2">Expenses</section>
     )
 }
 

@@ -2,7 +2,7 @@ import React from "react";
 
 const Policies = () => {
     return(
-        <h2>Policies</h2>
+        <section className="mainContent-2">Policies</section>
     )
 }
 

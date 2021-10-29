@@ -2,7 +2,7 @@ import React from "react";
 
 const Holidays = () => {
     return(
-        <h2>Holidays</h2>
+        <section className="mainContent-2">Holidays</section>
     )
 }
 

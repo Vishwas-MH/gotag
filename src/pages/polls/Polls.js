@@ -2,7 +2,7 @@ import React from "react";
 
 const Polls = () => {
     return(
-        <h2>Polls</h2>
+        <section className="mainContent-2">Polls</section>
     )
 }
 

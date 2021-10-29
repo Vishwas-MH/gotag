@@ -2,7 +2,7 @@ import React from "react";
 
 const Events = () => {
     return(
-        <h2>Events</h2>
+        <section className="mainContent-2">Events</section>
     )
 }
 

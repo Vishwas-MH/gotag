@@ -2,6 +2,7 @@ tr td{
     vertical-align: middle;
     padding: 0rem 0rem 0rem 1.05rem;
     text-align: left;
+    /* line-height:0; */
 }
 
 tr:hover{
@@ -57,6 +58,10 @@ tr:hover{
     /* vertical-align: top;
     top: 15%;
     padding-top: 1%; */
+}
+
+.table-row-manager:hover{
+    cursor: pointer;
 }
 
 .table-row-actions{

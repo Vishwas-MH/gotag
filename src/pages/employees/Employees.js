@@ -61,6 +61,23 @@ const Employees = () => {
         }
     }
 
+    const tableSort3 = (field) => {
+        if (sortOrder === "Asc") {
+            const sortedData = [...tableData].sort((a, b) =>
+                parseInt(a[field]) - parseInt(b[field])
+            );
+            setTableData(sortedData);
+            setSortOrder("Desc");
+        }
+        if (sortOrder === "Desc") {
+            const sortedData = [...tableData].sort((a, b) =>
+                parseInt(b[field]) - parseInt(a[field])
+            );
+            setTableData(sortedData);
+            setSortOrder("Asc");
+        }
+    }
+
     return (
         <section className="employees-page">
             <div className="employees-breadcrumbs">
@@ -116,7 +133,7 @@ const Employees = () => {
                                         </div>
                                     </div>
                                 </th>
-                                <th className="table-header-mobile" onClick={() => tableSort2("emp_mob")}>
+                                <th className="table-header-mobile" onClick={() => tableSort3("emp_mob")}>
                                     <div className="th-elements">
                                         <span className="header-name">MOBILE</span>
                                         <div className="sort-buttons">
@@ -152,7 +169,7 @@ const Employees = () => {
                         </thead>
                     </table>
                     {/* <TableScrollbar> */}
-                    <div className = "scroll-div">
+                    <div className="scroll-div">
                         <table className="employee-table">
                             {/* <thead className="employee-table-header">
                                 <tr className="table-header-row">
@@ -255,7 +272,7 @@ const Employees = () => {
                             </div>
                         )
                         }
-                        </div>
+                    </div>
                     {/* </TableScrollbar> */}
                 </div>
             </div>
