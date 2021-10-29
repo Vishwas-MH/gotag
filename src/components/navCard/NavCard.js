@@ -10,7 +10,9 @@ const NavCard = (props) => {
             </div>
             <div className="navCardText-new">
                 <h2 className="navCardText">{props.cardText}</h2>
+                {props.cardText2 !== "" && (
                 <span className="announcements">{props.cardText2}</span>
+                )}
             </div>
         </div>
     );
