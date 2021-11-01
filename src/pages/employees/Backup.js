@@ -1,8 +1,6 @@
 import React from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import validator from "validator";
 import "./Employees.css";
 import icon_search from "../../assets/images/employees/icon_search.png";
 import icon_arrow_up from "../../assets/images/employees/icon_arrow_up.png";
@@ -18,16 +16,6 @@ const Employees = () => {
     const [tableData, setTableData] = useState(EmployeeCardList)
     const [visible, setVisible] = useState(10);
     const [sortOrder, setSortOrder] = useState("Asc");
-    const [data, setData] = useState([]);
-    const [data2, setData2] = useState([]);
-
-    //console.log(data);
-
-    const validate = (inputText) => {
-        setSearchTerm(validator.trim(inputText));
-    }
-
-    const dispatch = useDispatch();
 
     const showMoreItems = () => {
         setVisible((n) => n + 10);
@@ -87,7 +75,7 @@ const Employees = () => {
                             type="text"
                             value={searchTerm}
                             placeholder="Search by Employee ID, Name, Email etc"
-                            onChange={(e) => validate(e.target.value)}
+                            onChange={(e) => setSearchTerm(e.target.value)}
                         ></input>
                     </div>
                 </header>
@@ -157,7 +145,7 @@ const Employees = () => {
                             </tr>
                         </thead>
                     </table>
-                    <div className="scroll-div">
+                    {/* <div className="scroll-div"> */}
                         <table className="employee-table">
                             <tbody className="table-body">
                                 {tableData.filter((val) => {
@@ -167,8 +155,7 @@ const Employees = () => {
                                     else if (val.emp_name.toLowerCase().includes(searchTerm.toLowerCase())
                                         || val.emp_id.toLowerCase().includes(searchTerm.toLowerCase())
                                         || val.emp_mail.toLowerCase().includes(searchTerm.toLowerCase())
-                                        || val.emp_role.toLowerCase().includes(searchTerm.toLowerCase())
-                                        || val.emp_manager.toLowerCase().includes(searchTerm.toLowerCase())) {
+                                        || val.emp_role.toLowerCase().includes(searchTerm.toLowerCase())) {
                                         return val
                                     }
                                     return null;
@@ -176,7 +163,6 @@ const Employees = () => {
                                     return (
                                         <tr className="employee-body-row" key={emps.id}>
                                             <EmployeeCard
-                                                id={emps.id}
                                                 pfp={emps.pfp}
                                                 emp_name={emps.emp_name}
                                                 emp_id={emps.emp_id}
@@ -184,12 +170,7 @@ const Employees = () => {
                                                 emp_role={emps.emp_role}
                                                 emp_mob={emps.emp_mob}
                                                 emp_date={emps.emp_date}
-                                                emp_manager={emps.emp_manager}
                                                 options={ManagerList}
-                                                data={data}
-                                                setData={setData}
-                                                data2={data2}
-                                                setData2={setData2}
                                             />
                                         </tr>
                                     )
@@ -204,21 +185,12 @@ const Employees = () => {
                             </div>
                         )
                         }
-                    </div>
+                    {/* </div> */}
                 </div>
             </div>
             <div className="employees-footer">
-            <Link to="/EmployeesCrumbs">
                 <button className="cancelBtn">CANCEL</button>
-            </Link>
-            <Link to="/EmployeesCrumbs">
-                <button className="saveBtn" onClick={() => {
-                for(var i=0; i<data.length;i++){
-                    dispatch({ type: "editManager", payload: data[i] })
-                }}
-                    
-                    }>SAVE</button>
-            </Link>
+                <button className="saveBtn">SAVE</button>
             </div>
         </section>
     );

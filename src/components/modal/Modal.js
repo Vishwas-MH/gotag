@@ -1,5 +1,6 @@
 import React from "react";
-import "./Modal.css"
+import "./Modal.css";
+import OutsideClickHandler from "react-outside-click-handler";
 
 const Modal = ({ open, children, onClose }) => {
     if (!open) {
@@ -8,12 +9,11 @@ const Modal = ({ open, children, onClose }) => {
     return (
         
         <div className="modal">
-            <div className="modal-contents">
-                <div className="modal-children">
-                    {children}
-                </div>
-            </div>
+            <OutsideClickHandler onOutsideClick={onClose}>
+            {children}
+            </OutsideClickHandler>
         </div>
+        
     )
 }
 

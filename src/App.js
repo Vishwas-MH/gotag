@@ -17,6 +17,7 @@ import Policies from './pages/policies/Policies';
 import Polls from './pages/polls/Polls';
 import Support from './pages/support/Support';
 import EmployeesCrumb from './pages/employees/EmployeesCrumb';
+import { ToastContainer } from "react-toastify";
 
 const App = () => {
 
@@ -24,8 +25,10 @@ const App = () => {
   const [selected, setSelected] = useState(1);
   //console.log(selected);
   return (
+    
     <Router>
       <div className="App">
+      <ToastContainer/>
         <Header selected={selected} setSelected={setSelected} open={open} setOpen={setOpen}/>
         <main>
           <Navbar selected={selected} setSelected={setSelected} open={open} setOpen={setOpen}/>
