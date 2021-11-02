@@ -83,7 +83,7 @@ const EmployeeCard = (props) => {
                     )}
                 <div className="flex-container">
                     <Modal open={isOpen} onClose={() => setIsOpen(false)}>
-                        <div className="modal-header" onClick={() => { setIsOpen(false); }}>Select a manager</div>
+                        <div className="modal-header">Select a manager</div>
                         <div className="input-box-container">
                             <img className="manager-search-icon" src={icon_search} alt=""></img>
                             <input
