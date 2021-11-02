@@ -156,9 +156,9 @@ const Employees = () => {
                                 </th>
                             </tr>
                         </thead>
-                    </table>
+                    {/* </table>
                     <div className="scroll-div">
-                        <table className="employee-table">
+                        <table className="employee-table"> */}
                             <tbody className="table-body">
                                 {tableData.filter((val) => {
                                     if (searchTerm === "") {
@@ -194,31 +194,33 @@ const Employees = () => {
                                         </tr>
                                     )
                                 })}
-                            </tbody>
-                        </table>
+                            {/* </tbody>
+                        </table> */}
                         {visible < tableData.length && (
-                            <div className="table-bottom" onClick={showMoreItems}>
+                            <tr className="table-bottom" onClick={showMoreItems}>
+                                <td>
                                 <button className="paginate-button">
                                     <span className="show-more">Show more</span>
                                 </button>
-                            </div>
+                                </td>
+                            </tr>
                         )
                         }
-                    </div>
+                        </tbody>
+                        </table>
+                    {/* </div> */}
                 </div>
             </div>
             <div className="employees-footer">
             <Link to="/EmployeesCrumbs">
                 <button className="cancelBtn">CANCEL</button>
             </Link>
-            {/* <Link to="/EmployeesCrumbs"> */}
                 <button className="saveBtn" onClick={() => {
                 for(var i=0; i<data.length;i++){
                     dispatch({ type: "editManager", payload: data[i] })
                 }}
                     
                     }>SAVE</button>
-            {/* </Link> */}
             </div>
         </section>
     );

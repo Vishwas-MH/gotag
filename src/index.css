@@ -90,7 +90,7 @@ body {
 
 @media only screen and (max-width: 770px){
 	*{
-		font-size: 8.3px;
+		font-size: 9px;
 	}
 	.navBarContainer{
 		transform: translateX(-100%);

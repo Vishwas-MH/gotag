@@ -110,10 +110,6 @@
     position: sticky;
 }
 
-.TableScrollbar{
-    height: calc(100% - 4rem)!important;
-}
-
 .scroll-div{
     height: calc(100% - 4rem);
     overflow-y: scroll;
@@ -124,7 +120,7 @@
 }
 
 .table-header-row th{
-    padding: 0rem 1rem;
+    padding: 0rem 0rem 0rem 1.2rem;
     vertical-align: middle;
 }
 
@@ -146,7 +142,7 @@
 }
 
 .table-header-name-email{
-    width: 21%;
+    width: 22%;
     cursor: pointer;
 }
 
@@ -156,7 +152,7 @@
 }
 
 .table-header-mobile{
-    width: 12%;
+    width: 13%;
     cursor: pointer;
 }
 
@@ -166,11 +162,11 @@
 }
 
 .table-header-manager{
-    width: 16%;
+    min-width: 12rem;
 }
 
 .table-header-actions{
-    width: 9.5%;
+    width: 9%;
 }
 
 .sort-buttons{
@@ -247,5 +243,27 @@
 }
 
 table{
-    table-layout: fixed;
+    display: block;
+}
+
+table thead{
+    display: block;
+}
+
+table tbody{
+    display: block;
+}
+
+.table-header-row{
+    display: table-row;
+}
+
+tbody{
+    height: calc(90vh - 17rem);
+    overflow-y: scroll;
+}
+
+.employee-body-row{
+    display: table-row;
+    width: 100%;
 }

@@ -171,3 +171,31 @@ tr:hover{
 .drop{
     width: 15%;
 }
+
+.table-row-name-email{
+    width: 22%;
+}
+
+.table-row-empID{
+    width: 13.2%;
+}
+
+.table-row-role{
+    width: 18%;
+}
+
+.table-row-mobile{
+    width: 13%;
+}
+
+.table-row-join-date{
+    width: 11%;
+}
+
+.table-row-actions{
+    width: 9%;
+}
+
+.table-row-manager{
+    min-width: 12rem;
+}
