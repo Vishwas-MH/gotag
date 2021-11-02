@@ -15,6 +15,7 @@ import { useSelector } from "react-redux";
 const EmployeeCard = (props) => {
 
     const [isOpen, setIsOpen] = useState(false);
+    //const [isOpen2, setIsOpen2] = useState(false);
     const [searchTerm2, setSearchTerm2] = useState("");
     const [selected, setSelected] = useState("");
     //console.log(selected);
@@ -40,9 +41,11 @@ const EmployeeCard = (props) => {
     }
 
 
-    const handleActions = () => {
-
-    }
+    // const handleActions = (props) => {
+    //     <Modal open={isOpen2} onClose={() => setIsOpen2(false)}>
+    //         Test
+    //     </Modal>
+    // }
 
 
     const EmployeeCardList = useSelector((state) => state.managers);
@@ -113,7 +116,8 @@ const EmployeeCard = (props) => {
                 </div>
             </td>
             <td className="table-row-actions">
-                <img className="actions-image" src={icon_actions} onClick={() => handleActions()} alt=""></img>
+                <img className="actions-image" src={icon_actions} alt=""></img>
+                {/* <img className="actions-image" src={icon_actions} onClick={() => handleActions(props)} alt=""></img> */}
             </td>
         </>
     );
