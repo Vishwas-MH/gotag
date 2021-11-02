@@ -211,14 +211,14 @@ const Employees = () => {
             <Link to="/EmployeesCrumbs">
                 <button className="cancelBtn">CANCEL</button>
             </Link>
-            <Link to="/EmployeesCrumbs">
+            {/* <Link to="/EmployeesCrumbs"> */}
                 <button className="saveBtn" onClick={() => {
                 for(var i=0; i<data.length;i++){
                     dispatch({ type: "editManager", payload: data[i] })
                 }}
                     
                     }>SAVE</button>
-            </Link>
+            {/* </Link> */}
             </div>
         </section>
     );
