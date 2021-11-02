@@ -60,10 +60,6 @@ tr:hover{
     padding-top: 1%; */
 }
 
-.table-row-manager:hover{
-    cursor: pointer;
-}
-
 .table-row-actions{
     width: 9.5%;
     text-align: center;
@@ -96,6 +92,10 @@ tr:hover{
     width: 1rem;
     position: relative;
     right: 25%;
+}
+
+.actions-image:hover{
+    cursor: pointer;
 }
 
 .manager-overlay{
@@ -146,9 +146,14 @@ tr:hover{
     display: flex;
     position: relative;
     top: 30%;
+    cursor: default;
 }
 
 .table-row-manager span{
     position: relative;
     top: 33.5%;
+}
+
+.manager-display{
+    cursor: pointer;
 }

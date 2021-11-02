@@ -10,10 +10,15 @@ const managerReducer = (state = testData, action) => {
         case "editManager":
             {
                 //console.log(state);
-                const updateState = state.map(contact => contact.id === action.payload.id? 
+                const updateState = state.map(contact => contact.id === action.payload.id ?
                     action.payload : contact);
                 state = updateState;
                 return state;
+            }
+        case "deleteManager":
+            {
+                const newState = state.filter(val => val !== action.payload.id );
+                return newState
             }
         default:
             return state;

@@ -39,24 +39,10 @@ const EmployeeCard = (props) => {
         setIsOpen(false);
     }
 
-    // const handleSubmit2 = (e) => {
-    //     setSelected(e.emp_name);
-    //     const data = {
-    //         id: parseInt(props.id),
-    //         pfp: icon_employee_profile,
-    //         emp_id: parseInt(props.emp_id),
-    //         emp_name: props.emp_name,
-    //         emp_mail: props.emp_mail,
-    //         emp_role: props.emp_role,
-    //         emp_mob: props.emp_mob,
-    //         emp_date: props.emp_date,
-    //         emp_manager: "",
-    //     }
-    //     props.setData(data);
-    //     //dispatch({ type: "editManager", payload: data });
-    //     setIsOpen(false);
-    // }
 
+    const handleActions = () => {
+
+    }
 
 
     const EmployeeCardList = useSelector((state) => state.managers);
@@ -127,7 +113,7 @@ const EmployeeCard = (props) => {
                 </div>
             </td>
             <td className="table-row-actions">
-                <img className="actions-image" src={icon_actions} alt=""></img>
+                <img className="actions-image" src={icon_actions} onClick={() => handleActions()} alt=""></img>
             </td>
         </>
     );
