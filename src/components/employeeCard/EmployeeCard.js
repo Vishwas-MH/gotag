@@ -10,6 +10,7 @@ import Modal from "../modal/Modal";
 import icon_search from "../../assets/images/employees/icon_search.png";
 import icon_arrow_down from "../../assets/images/employees/icon_arrow_down.png";
 import { useSelector } from "react-redux";
+import validator from "validator";
 
 
 const EmployeeCard = (props) => {
@@ -21,6 +22,11 @@ const EmployeeCard = (props) => {
     //console.log(selected);
     //const dispatch = useDispatch();
     //console.log(dispatch);
+
+    const validate = (inputText) => {
+        setSearchTerm2(validator.trim(inputText));
+    }
+
     const handleSubmit = (e) => {
         setSelected(e.emp_name);
         const data1 = [{
@@ -91,7 +97,7 @@ const EmployeeCard = (props) => {
                                 type="text"
                                 value={searchTerm2}
                                 placeholder="Search"
-                                onChange={(e) => setSearchTerm2(e.target.value)}
+                                onChange={(e) => validate(e.target.value)}
                             ></input>
                         </div>
                         <ul className="modal-list">
