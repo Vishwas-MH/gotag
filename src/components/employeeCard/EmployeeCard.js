@@ -73,13 +73,13 @@ const EmployeeCard = (props) => {
             <td className="table-row-manager">
                 {!(EmployeeCardList[props.id - 1].emp_manager) ?
                     (selected === "" ? (
-                        <span className="manager-display" onClick={() => setIsOpen(true)}>select<span><img className="manager-drop-arrow" src={icon_arrow_down} alt=""></img></span></span>
+                        <span className="manager-display" onClick={() => setIsOpen(true)}>select<span className="drop"><img className="manager-drop-arrow" src={icon_arrow_down} alt=""></img></span></span>
                     ) :
-                        (<span className="manager-blue manager-display" onClick={() => setIsOpen(true)}>{selected}<span><img className="manager-drop-arrow" src={icon_arrow_down} alt=""></img></span></span>)
+                        (<span className="manager-blue manager-display" onClick={() => setIsOpen(true)}><span className="manager-overflow">{selected}</span><span className="drop"><img className="manager-drop-arrow" src={icon_arrow_down} alt=""></img></span></span>)
                     )
                     :
                     (
-                        <span className="manager-blue manager-display" onClick={() => setIsOpen(true)}>{EmployeeCardList[props.id - 1].emp_manager}<span><img className="manager-drop-arrow" src={icon_arrow_down} alt=""></img></span></span>
+                        <span className="manager-blue manager-display" onClick={() => setIsOpen(true)}><span className="manager-overflow">{EmployeeCardList[props.id - 1].emp_manager}</span><span className="drop"><img className="manager-drop-arrow" src={icon_arrow_down} alt=""></img></span></span>
                     )}
                 <div className="flex-container">
                     <Modal open={isOpen} onClose={() => setIsOpen(false)}>

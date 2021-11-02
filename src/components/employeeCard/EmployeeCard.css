@@ -140,6 +140,9 @@ tr:hover{
 
 .manager-blue .manager-display text{
     z-index: 5;
+    text-overflow: ellipsis;
+    overflow:hidden;
+    white-space: nowrap;
 }
 
 .flex-container{
@@ -156,4 +159,15 @@ tr:hover{
 
 .manager-display{
     cursor: pointer;
+    width: 90%;
+}
+
+.manager-overflow{
+    text-overflow: ellipsis;
+    overflow:hidden;
+    white-space: nowrap;
+}
+
+.drop{
+    width: 15%;
 }
