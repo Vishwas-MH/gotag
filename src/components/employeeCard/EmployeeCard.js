@@ -18,7 +18,7 @@ const EmployeeCard = (props) => {
     const [isOpen, setIsOpen] = useState(false);
     //const [isOpen2, setIsOpen2] = useState(false);
     const [searchTerm2, setSearchTerm2] = useState("");
-    const [selected, setSelected] = useState("");
+    
     //console.log(selected);
     //const dispatch = useDispatch();
     //console.log(dispatch);
@@ -55,6 +55,8 @@ const EmployeeCard = (props) => {
 
 
     const EmployeeCardList = useSelector((state) => state.managers);
+
+    const [selected, setSelected] = useState((EmployeeCardList[props.id - 1].emp_manager));
     //console.log(EmployeeCardList);
 
     return (
@@ -77,16 +79,16 @@ const EmployeeCard = (props) => {
             <td className="table-row-mobile">{props.emp_mob}</td>
             <td className="table-row-join-date">{props.emp_date}</td>
             <td className="table-row-manager">
-                {!(EmployeeCardList[props.id - 1].emp_manager) ?
-                    (selected === "" ? (
+                {/* {!(EmployeeCardList[props.id - 1].emp_manager) ? */}
+                    {(selected === "" ? (
                         <span className="manager-display" onClick={() => setIsOpen(true)}>select<span className="drop"><img className="manager-drop-arrow" src={icon_arrow_down} alt=""></img></span></span>
                     ) :
                         (<span className="manager-blue manager-display" onClick={() => setIsOpen(true)}><span className="manager-overflow">{selected}</span><span className="drop"><img className="manager-drop-arrow" src={icon_arrow_down} alt=""></img></span></span>)
-                    )
-                    :
-                    (
-                        <span className="manager-blue manager-display" onClick={() => setIsOpen(true)}><span className="manager-overflow">{EmployeeCardList[props.id - 1].emp_manager}</span><span className="drop"><img className="manager-drop-arrow" src={icon_arrow_down} alt=""></img></span></span>
                     )}
+                    {/* // :
+                    // (
+                    //     <span className="manager-blue manager-display" onClick={() => setIsOpen(true)}><span className="manager-overflow">{EmployeeCardList[props.id - 1].emp_manager}</span><span className="drop"><img className="manager-drop-arrow" src={icon_arrow_down} alt=""></img></span></span>
+                    // ) */}
                 <div className="flex-container">
                     <Modal open={isOpen} onClose={() => setIsOpen(false)}>
                         <div className="modal-header">Select a manager</div>
